@@ -80,7 +80,6 @@ class ApiPets:
         return status, response
 
     def set_photo_for_pet(self, photo, pet_id):
-        """Функция добавления фота"""
         file = {'pet_photo': (photo, open(photo, 'rb'))}
         response = requests.post(f"{self.base_url}/api/pets/set_photo/{pet_id}",
                                  headers={'auth_key': '47c19fcdb9a680fc597ef5bb10346fc6a3e3e6404cd14d28470a5307'},
@@ -94,8 +93,8 @@ class ApiPets:
 
 
 a = ApiPets()
-# (a.get_key("Lion163163", "dqwdqw2d@dwdwd.tr"))
-print(a.get_pets("47c19fcdb9a680fc597ef5bb10346fc6a3e3e6404cd14d28470a5307"))
+# print(a.get_key("Lion163163", "dqwdqw2d@dwdwd.tr"))
+# print(a.get_pets("47c19fcdb9a680fc597ef5bb10346fc6a3e3e6404cd14d28470a5307"))
 # print(a.create_pet())
 # print(a.update_pet())
 # print(a.delete_pet())
