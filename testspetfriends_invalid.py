@@ -1,6 +1,6 @@
 from api_for_new_test import *
 import pytest
-
+key = "47c19fcdb9a680fc597ef5bb10346fc6a3e3e6404cd14d28470a5307"
 a = ApiPets()
 
 
@@ -40,7 +40,8 @@ class TestPets:
 
     def test_update_pet(self):
         """Изменение данных на пустые поля"""
-        status, info = a.update_pet("fbbda9da-0c6e-42cb-98a6-2abd8f14fb6f", "", "", "")  # указать свой pet_id
+        pet_id = a.get_pets(key)[1]["pets"][0]["id"]
+        status, info = a.update_pet(pet_id, " ", " ", " ")
         assert status == 200
 
     def test_delete_pet(self):
